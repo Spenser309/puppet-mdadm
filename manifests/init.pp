@@ -24,17 +24,13 @@
 #   Boolean. Whether to ensure the mdadm cronjob exists in /etc/cron.d/
 #
 class mdadm (
-  $package_name = hiera('mdadm::package_name', $mdadm::params::package_name),
-  $package_ensure = hiera('mdadm::package_ensure',
-                          $mdadm::params::package_ensure),
-  $service_name = hiera('mdadm::service_name', $mdadm::params::service_name),
-  $service_ensure = hiera('mdadm::service_ensure',
-                          $mdadm::params::service_ensure),
-  $service_manage = hiera('mdadm::service_manage',
-                          $mdadm::params::service_manage),
-  $service_hasstatus = hiera('mdadm::service_hasstatus',
-                          $mdadm::params::service_hasstatus),
-  $include_cron = hiera('mdadm::include_cron', $mdadm::params::include_cron),
+  $package_name = $mdadm::params::package_name,
+  $package_ensure = $mdadm::params::package_ensure,
+  $service_name = $mdadm::params::service_name,
+  $service_ensure = $mdadm::params::service_ensure,
+  $service_manage = $mdadm::params::service_manage,
+  $service_hasstatus = $mdadm::params::service_hasstatus,
+  $include_cron = $mdadm::params::include_cron,
 
 ) inherits mdadm::params {
 
