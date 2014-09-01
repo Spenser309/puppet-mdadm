@@ -38,7 +38,7 @@ class mdadm (
 
   anchor { 'mdadm::begin': } ->
   class { 'mdadm::install': } ->
-  class { 'mdadm::config': }
+  class { 'mdadm::config': } ->
   class { 'mdadm::service': } ->
   anchor { 'mdadm::end': }
 
